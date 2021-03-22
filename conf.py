@@ -93,5 +93,6 @@ html_sidebars = {
     "blog/**": ["postcard.html", "recentposts.html", "archives.html"],
 }
 
+
 def setup(app):
     app.add_css_file("custom.css")

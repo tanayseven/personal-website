@@ -39,34 +39,59 @@ party that you are hosting it will be as follows. For example, let’s say I’m
 the people’s names via SMS. So I will create a new form for accepting the people who are willing to join the event.
 Suppose the event is some music show, I will accept the applications in the following format.
 
-<code>MUSIC&lt;space&gt;NAME&lt;space&gt;AGE</code>
+:code:`MUSIC<space>NAME<space>AGE`
 
 Suppose John Doe is registering for an event, his message will be as follows:
 
-<code>MUSIC John 27</code>
+:code:`MUSIC John 27`
 
 All the words that I’m accepting via the app are case insensitive. The reason being that there should be no mismatch
 between the words being just because of the case. At least the first word has to be kept case insensitive.
 
-<h4>A screen to screen working for the app</h4>
+A screen to screen working for the app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-{{ image_center("/res/images/smserver_images/01_emulator.png", "emulator", "This is my emulator running Nexus 5") }}
-<br />
+.. figure:: images/smserver_images/01_emulator.png
+  :width: 500
+  :alt: emulator
+  :align: center
 
-{{ image_center("/res/images/smserver_images/02_start_screen.png", "start_screen", "This is the starting screen when you first start the app") }}
-<br />
+  This is the starting screen when you first start the app
 
-{{ image_center("/res/images/smserver_images/03_main_menu.png", "main_menu", "Now you click on the right-top corner menu button for creating a new form") }}
-<br />
+.. figure:: images/smserver_images/02_start_screen.png
+  :width: 500
+  :alt: start_scren
+  :align: center
 
-{{ image_center("/res/images/smserver_images/04_new_form.png", "new_form", "These are the details that you have to fill up to accept registrations") }}
-<br />
+  This is the starting screen when you first start the app
 
-{{ image_center("/res/images/smserver_images/05_calender_selector.png", "calender_selector", "Also included, date and time selectors") }}
-<br />
+.. figure:: images/smserver_images/03_main_menu.png
+  :width: 500
+  :alt: main_menu
+  :align: center
 
-{{ image_center("/res/images/smserver_images/07_filled_form.png", "filled_form", "Fill up this form") }}
-<br />
+  Now you click on the right-top corner menu button for creating a new form
+
+.. figure:: images/smserver_images/04_new_form.png
+  :width: 500
+  :alt: new_form
+  :align: center
+
+  These are the details that you have to fill up to accept registrations
+
+.. figure:: images/smserver_images/05_calender_selector.png
+  :width: 500
+  :alt: calender_selector
+  :align: center
+
+  Also included, date and time selectors
+
+.. figure:: images/smserver_images/07_filled_form.png
+  :width: 500
+  :alt: filled_form
+  :align: center
+
+  Fill up this form
 
 - The name for the new form is the name that you want to give to the form which will accept registrations, the form name will be for your own reference
 - The starting date and time are the date and time when the form should start accepting the entries
@@ -76,28 +101,56 @@ between the words being just because of the case. At least the first word has to
 - The form will be saved when you click the save button
 
 
-{{ image_center("/res/images/smserver_images/10_main_screen_form_created.png", "main_screen_form_created", "On the main screen you will see the newly created form") }}
-<br />
+.. figure:: images/smserver_images/10_main_screen_form_created.png
+  :width: 500
+  :alt: main_screen_form_created
+  :align: center
 
-{{ image_center("/res/images/smserver_images/08_form_menu.png", "form_menu", "You can either open the form") }}
-<br />
+  On the main screen you will see the newly created form
 
-{{ image_center("/res/images/smserver_images/09_opened_form_no_entries.png", "opened_form_no_entries", "After opening the form you can see the details of the form") }}
-<br />
+.. figure:: images/smserver_images/08_form_menu.png
+  :width: 500
+  :alt: form_menu
+  :align: center
+
+  You can either open the form
+
+.. figure:: images/smserver_images/09_opened_form_no_entries.png
+  :width: 500
+  :alt: opened_form_no_entries
+  :align: center
+
+  After opening the form you can see the details of the form
 
 <h4>It will also list the phone numbers and date and time of the people who have just registered</h4>
 
-{{ image_center("/res/images/smserver_images/10_main_screen_form_created.png", "main_screen_form_created", "Now send an SMS to yourself with that format, I’ll send the same SMS (music john 28)") }}
-<br />
+.. figure:: images/smserver_images/10_main_screen_form_created.png
+  :width: 500
+  :alt: main_screen_form_created
+  :align: center
 
-{{ image_center("/res/images/smserver_images/11_entry_made.png", "entry_made", "Then you can go to the main screen and come back by opening the form and you will see the entry for the newly received SMS") }} <br />
+  Now send an SMS to yourself with that format, I’ll send the same SMS (music john 28)
 
-{{ image_center("/res/images/smserver_images/08_form_menu.png", "form_menu", "You can then click the form and say “Save the records” this will allow you to share the CSV file, keep in mind that you have to select an app that allows sending of CSV files, I’ll recommend to use an email app and you can also delete the form") }}
-<br />
+.. figure:: images/smserver_images/11_entry_made.png
+  :width: 500
+  :alt: entry_made
+  :align: center
 
-{{ image_center("/res/images/smserver_images/12_server_running_in_background.png", "server_running_in_background", "You can see the server running in the background in the notification drawer") }}
-<br />
+  Then you can go to the main screen and come back by opening the form and you will see the entry for the newly received SMS
+.. figure:: images/smserver_images/08_form_menu.png
+  :width: 500
+  :alt: form_menu
+  :align: center
+
+  You can then click the form and say “Save the records” this will allow you to share the CSV file, keep in mind that you have to select an app that allows sending of CSV files, I’ll recommend to use an email app and you can also delete the form
+
+.. figure:: images/smserver_images/12_server_running_in_background.png
+  :width: 500
+  :alt: server_running_in_background
+  :align: center
+
+  You can see the server running in the background in the notification drawer
 
 Now that you have seen how the app works, you can download the app by clicking
-<a href="https://drive.google.com/open?id=0B8ZGvtCVIoJgNlZPMnU3WHVXcFk">here</a>.
+`here <https://drive.google.com/open?id=0B8ZGvtCVIoJgNlZPMnU3WHVXcFk>`__
 Also, do test it on your own and report any bugs to me. You are also free to suggest any features to me if you want.

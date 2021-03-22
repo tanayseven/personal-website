@@ -19,9 +19,9 @@ Python and then a exact implementaion is shown in Scheme. The main reason for ch
 is very easy and looks a lot like pseudocode and for those who don't know the language can easily
 undrstand the code.
 
-.. figure:: images/sicp-wizard.png
+.. figure:: images/scheme.jpg
   :width: 500
-  :alt: SICP Wizard (cover page of the SICP book)
+  :alt: Scheme Logo
   :align: center
 
 

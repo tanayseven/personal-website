@@ -9,9 +9,9 @@ At Nelkinda Coderetreat
 
 
 Completely unexpected of what is there, I registered for
-<a href="http://nelkinda.com/events/2016-07-16-4th-Nelkinda-Coderetreat">Coderetreat that’s held at Nelkinda</a>
-which was on 16th of July 2016. Facilitated by <a href="https://twitter.com/SiddheshNikude">Siddhesh Nikude</a> and
-<a href="https://twitter.com/ShwetaSadawarte">Shweta Sadawarte</a> it was a long but a really nice event. More than
+`Coderetreat that’s held at Nelkinda <http://nelkinda.com/events/2016-07-16-4th-Nelkinda-Coderetreat>`__
+which was on 16th of July 2016. Facilitated by `Siddhesh Nikude <https://twitter.com/SiddheshNikude>`__ and
+`Shweta Sadawarte <https://twitter.com/ShwetaSadawarte>`__ it was a long but a really nice event. More than
 anything else I got to learn a lot from that event and I will write some of my experience here.
 
 The session was split into code sprints and retrospectives. There was a 45 minute of code sprint followed by a
@@ -27,7 +27,8 @@ language of our choice rather than enforcing a language upon us.
   :alt: Coderetreat Code Retrospective @ Nelkinda
   :align: center
 
-<h3>The way the whole event went</h3>
+The way the whole event went
+----------------------------
 
 Initially, I was paired with another student who was not very familiar with TDD. I started by introducing him the
 red-green-refactor cycle. But these are the things that I have learnt on my own and have not worked in an industry
@@ -54,7 +55,7 @@ lambdas and ArrayList on which I could run the lambdas. It was a crazy experienc
 since I’ve never used lambdas in Java before. Also, my partner was not very comfortable with lambdas and quite a
 lot of time was spent in both of us learning how it works.
 
-Later I was paired with my friend <a href="https://twitter.com/Mistcrafter">Douglas Vaz</a> who introduced me to a
+Later I was paired with my friend `Douglas Vaz <https://twitter.com/Mistcrafter>`__ who introduced me to a
 new way of writing code that is BDD. “BDD is TDD done right” this is the statement most of the blogs and or
 websites all over the internet contain. From what I’ve learnt, in BDD you don’t have to think about the
 implementation of the feature that you are going to test. Instead, just write a test about the behaviour or the

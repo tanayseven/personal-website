@@ -11,8 +11,8 @@ Hello World
   :alt: Hello World
   :align: center
 
-<b>Hello World!</b> The title of this post in the honour of the first program that is written while learning
-programming. This is my first post on the blog, and hence I'm calling it <b>Hello World!</b> post. I'm mainly
+**Hello World!** The title of this post in the honour of the first program that is written while learning
+programming. This is my first post on the blog, and hence I'm calling it **Hello World!** post. I'm mainly
 passionate about technology and coding is my passion. I'm right now a student studying M.Tech at Manipal
 Institute of Technology, Manipal. The main reason of writing this blog is to share with the world what I think,
 and the new things that I learn. I also like learning about some cool science-related concepts esp. w.r.t.
