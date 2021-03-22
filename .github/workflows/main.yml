@@ -28,7 +28,6 @@ jobs:
 
       - name: Deploy to Github pages
         run: |
-          cd $GP_REPO_PATH
           ablog deploy -g $GH_REPO_USERNAME --github-token ${{ secrets.GH_TOKEN }}
 
       - name: Setup Node.js environment
