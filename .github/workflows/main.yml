@@ -30,6 +30,7 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+
       - name: Clone the Github pages repository
         run: git clone https://${{ secrets.GH_TOKEN }}@github.com/tanayseven/tanayseven.github.io.git
 
