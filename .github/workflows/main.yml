@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    env:
+      SHELL: /bin/bash
+      GP_REPO_PATH: tanayseven.github.io/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Clean everything and start from scratch
+        run: make clean clean-deps
+
+      - name: Install all the dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Build the project
+        run: ablog clean && ablog build
+
+#      - name: Verify the built files
+#        run: make verify
+
+      - name: Setup Github config
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+      - name: Clone the Github pages repository
+        run: git clone https://${{ secrets.GH_TOKEN }}@github.com/tanayseven/tanayseven.github.io.git
+
+      - name: Deploy to Github pages
+        run: |
+          rsync -avzh _website/* $GP_REPO_PATH
+          cd $GP_REPO_PATH
+          git add .
+          git commit -m "$$(git status --porcelain)" || echo "Nothing new in the branch, nothing will be deployed"
+          git push
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 12.19.0
+
+      - name: Run lighthouse performance
+        run: |
+          lighthouse-badges --version || npm i -g lighthouse-badges
+          lighthouse-badges --urls https://tanayseven.com/ https://tanayseven.com/blog -o test_results
+
+      - name: Install Netlify CLI
+        run: npm install netlify-cli -g
+
+      - name: Publish the performance badges to Netlify
+        run: netlify deploy --auth=${{ secrets.NETLIFY_TOKEN }} --dir=test_results/ --site=tanayseven-badges-personal-website.netlify.app
