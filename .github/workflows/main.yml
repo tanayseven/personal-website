@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Github pages
         run: |
-          ablog deploy -g $GH_REPO_USERNAME --github-token ${{ secrets.GH_TOKEN }}
+          ablog deploy --github-token ${{ secrets.GH_TOKEN }}
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
