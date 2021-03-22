@@ -39,7 +39,7 @@ jobs:
           rsync -avzh public/* $GP_REPO_PATH
           cd $GP_REPO_PATH
           git add .
-          git commit -m "`git status --porcelain` || echo "Nothing new in the branch, nothing will be deployed"
+          git commit -m "`git status --porcelain`" || echo "Nothing new in the branch, nothing will be deployed"
           git push
 
       - name: Setup Node.js environment
