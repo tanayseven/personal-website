@@ -10,6 +10,7 @@ jobs:
   build:
     env:
       SHELL: /bin/bash
+      GP_REPO_PATH: tanayseven.github.io/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,9 +26,21 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
+      - name: Setup Github config
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+      - name: Clone the Github pages repository
+        run: git clone https://${{ secrets.GH_TOKEN }}@github.com/tanayseven/tanayseven.github.io.git
+
       - name: Deploy to Github pages
         run: |
-          ablog deploy -g tanayseven --github-token ${{ secrets.GH_TOKEN }}
+          rsync -avzh _website/* $GP_REPO_PATH
+          rsync -avzh public/* $GP_REPO_PATH
+          cd $GP_REPO_PATH
+          git add .
+          git commit -m "`git status --porcelain` || echo "Nothing new in the branch, nothing will be deployed"
+          git push
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
