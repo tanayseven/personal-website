@@ -15,17 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Clean everything and start from scratch
-        run: make clean clean-deps
-
       - name: Install all the dependencies
         run: pip3 install -r requirements.txt
 
       - name: Build the project
         run: ablog clean && ablog build
-
-#      - name: Verify the built files
-#        run: make verify
 
       - name: Setup Github config
         run: |
