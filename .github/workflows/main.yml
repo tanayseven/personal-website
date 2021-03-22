@@ -26,8 +26,10 @@ jobs:
           git config --global user.name "GitHub Action"
 
       - name: Deploy to Github pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          ablog deploy -g ${{ secrets.GH_TOKEN }}
+          ablog deploy -g tanayseven --github-token GH_TOKEN
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
