@@ -39,12 +39,9 @@ jobs:
           git push
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.5.0
         with:
-          node-version: 12.19.0
-          
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v0.0.0
+          node-version: 16.6.1
 
       - name: Run lighthouse performance
         run: |
