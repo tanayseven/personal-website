@@ -19,12 +19,7 @@ jobs:
         run: pip3 install -r requirements.txt
 
       - name: Build the project
-        run: ablog clean && ablog build
-
-      - name: Setup Github config
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+        run: make clean && make html
 
       - name: Setup Github config
         run: |
@@ -36,7 +31,7 @@ jobs:
 
       - name: Deploy to Github pages
         run: |
-          rsync -avzh _website/* $GP_REPO_PATH
+          rsync -avzh _build/html/* $GP_REPO_PATH
           rsync -avzh public/.[^.]* $GP_REPO_PATH
           cd $GP_REPO_PATH
           git add .

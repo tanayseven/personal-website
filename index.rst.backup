@@ -1,0 +1,28 @@
+.. Tanay Rambles documentation master file, created by
+   sphinx-quickstart on Wed Nov 10 20:11:24 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Tanay Rambles blog
+=============================
+
+.. helloworld::
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Blogs:
+
+    posts/2016-03-27-hello-world
+
+
+.. todolist::
+
+Joe's Recipes
+=============
+
+Below are a collection of my favourite recipes. I highly recommend the
+:recipe:ref:`TomatoSoup` recipe in particular!
+
+.. toctree::
+
+   posts/tomato-soup
