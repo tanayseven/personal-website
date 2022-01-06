@@ -41,6 +41,11 @@ Website Performance Report (Lighthouse)
     :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=seo&utm_source=lh-chrome-ext
     :alt: SEO
 
+TODO
+====
+
+Caution: The following document is entirely outdated and needs a major revamp
+=============================================================================
 
 Static Website Generator
 ========================
