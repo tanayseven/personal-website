@@ -29,10 +29,10 @@ html_title = 'Tanay Rambles'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 import sys, os
+
 sys.path.append(os.path.abspath("./_ext"))
+
 extensions = [
-    "helloworld",
-    "todo",
     "blog",
 ]
 
