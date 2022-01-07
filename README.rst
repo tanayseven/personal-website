@@ -41,69 +41,44 @@ Website Performance Report (Lighthouse)
     :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=seo&utm_source=lh-chrome-ext
     :alt: SEO
 
-TODO
-====
-
-Caution: The following document is entirely outdated and needs a major revamp
-=============================================================================
-
 Static Website Generator
 ========================
 
 .. image:: personal_site.png
     :alt: Personal website picture
 
-This repository contains a very small yet powerful static website generator which is used to make static website by
-using reusable components that will be used across the website and uses ``make`` as a tool to have incremental builds of
-the website. The attempt is to keep things very clean and do it the "Unix way" by representing everything in files. This
-repository is currently used to build my personal website and is open for other to use to build their website as it is
-MIT license. This website uses Jinja2 as a templating engine for generating the intermediate components and websites.
-Please submit a pull request if you want to fix any issue or submit any feature you feel to be missing.
+This repository is a static website that is a small yet powerful static website generator.
+The pages are written using `reStructured`_ text and built using `Sphinx`_.
+A very good reason for choosing reStructured text was to use the power of directives and not insert HTML
+tags within Markdown. If I had to write some things in HTML, I'd write everything in HTML;
+but that would not be very readable, would it? The blog was initially to be enabled by simply
+using the `ablog`_ sphinx extension. The problem that I encountered with that is that it did not work
+with my favourite Sphinx theme `Furo`_. In order to counter that I thought of writing my own plugin to
+build it into blog format.
+
+
+.. _reStructured: https://en.wikipedia.org/wiki/ReStructuredText
+
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
+
+.. _ablog: https://ablog.readthedocs.io/
+
+.. _Furo: https://pradyunsg.me/furo/
 
 Inspired from the following websites:
 
-1.  `Nelkinda`_
-2.  `alice_maz`_
+1.  `errbufferoverfl`_
+2.  `Doug Hellmann`_
 
-.. _Nelkinda: http://nelkinda.com
+.. _errbufferoverfl: https://www.errbufferoverfl.me/
 
-.. _alice_maz: https://www.alicemaz.com/
+.. _Doug Hellmann: https://www.errbufferoverfl.me/
 
 
 Tanay's Personal Website
 ------------------------
 
-To know how to do different actions using the make file, please use ``make help``
-
-Advantages of using ``make`` and other design choices in this project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1.  **Incremental building** make offers incremental building and or compiling of files. This means that if there are
-    multiple files, then it will build the necessary files purely based on the changes that have been recently made.
-    Performing a ``make build`` will run this incremental build since it is the property of the GNU-Make tool. It also
-    uses ``rsync`` to perform the incremental build for static assets that do not need compilation/building.
-
-2.  **Serving website locally** has a command called ``make serve`` which expects the ``_build`` directory to exist and
-    if it exists then it just starts a server to serve the contents of that directory, else it actually performs a build
-    and then serves the files from that directly in that server.
-
-3.  **Watch build** there is a command called ``make watch-build`` which can be used to harness the power of both
-    incremental build and that of serve. This leads to both easy and fast modification to your website on your local
-    machine.
-
-4.  **Deploying the website** has a command to deploy the website to the static website that is hosted on github pages.
-    This command performs ``rsync`` of the files to the the actual repository and then does a commit in that repository
-    and pushes the newly committed changes to the repository which automatically makes it live on the website.
-
-5.  **Splitting web pages into components** The use of Jinja2 helps me to split the Makefile into components into
-    multiple directories in ``templates/components/`` directory, this makes the components be reusable across different
-    pages in the website.
-
-6.  **Minification of CSS and JS** The JS and CSS is minified before making it available to the website to use.
-
-7.  **High speed parallel builds** The main advantage of using make is that the project is built very fast simply with
-    the use of the ``-j`` flag as command argument
-
+To know commands to perform any activity like build, please run ``make help`` command
 
 LICENSE
 ~~~~~~~
