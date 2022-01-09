@@ -10,3 +10,9 @@ All Blog Posts
 --------------
 
 .. all-posts::
+
+.. toctree::
+   :glob:
+   :hidden:
+
+   posts/*

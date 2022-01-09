@@ -1,13 +1,14 @@
+import pprint
 import re
 from datetime import datetime
 from typing import TypedDict, Optional
 
 from docutils import nodes
 from docutils.parsers.rst import Directive
-from sphinx.util.docutils import SphinxDirective
 from sphinx.application import Sphinx
 from sphinx.directives import Node
 from sphinx.environment import BuildEnvironment
+from sphinx.util.docutils import SphinxDirective
 from sphinx.util.nodes import set_source_info
 from sphinx.writers.html5 import HTML5Translator
 from sphinx.writers.texinfo import TexinfoTranslator
@@ -52,7 +53,8 @@ def _fetch_date_from_file(node):
 
 
 class PostDirective(SphinxDirective):
-    has_content = True
+    has_content = False
+    option_spec = {"tags": str, "category": str, "author": str, "draft": bool}
 
     def run(self) -> list[Node]:
         node = PostNode()
@@ -66,7 +68,6 @@ class PostDirective(SphinxDirective):
         titles = [x for x in node.document.traverse() if hasattr(x, "title")]
         title = titles[0].astext() if titles else None
         self.state.nested_parse(self.content, self.content_offset, node)
-        # add posts to all posts
         if not hasattr(self.env, "all_posts"):
             self.env.all_posts = []
         target_id = "post-%d" % self.env.new_serialno("post")
@@ -78,6 +79,9 @@ class PostDirective(SphinxDirective):
                 "target": target_node,
                 "date": date,
                 "node": node,
+                "author": self.options["author"],
+                "tags": [x.strip(" ") for x in self.options["tags"].split(",")],
+                "draft": self.options.get("draft"),
             }
         )
         return [target_node, node]
@@ -129,6 +133,8 @@ def process_post_nodes(app: Sphinx, doctree: nodes.document, fromdocname: str):
             continue
         content = []
         for post_meta in env.all_posts:
+            if post_meta["draft"]:
+                continue
             formatted_post_date = datetime.strftime(post_meta["date"], "%d %B %Y")
 
             # Set up a section for the post content
