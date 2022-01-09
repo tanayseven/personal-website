@@ -34,6 +34,7 @@ sys.path.append(os.path.abspath("./_ext"))
 
 extensions = [
     "blog",
+    "yasfb",
 ]
 
 todo_include_todos = True
@@ -58,3 +59,7 @@ html_theme = 'furo'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Setting up RSS feeds
+feed_base_url = 'http://tanayseven.com/feeds'
+feed_author = f'{author}'
