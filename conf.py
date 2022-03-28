@@ -35,6 +35,7 @@ sys.path.append(os.path.abspath("./_ext"))
 extensions = [
     "blog",
     "yasfb",
+    "myst_parser",
 ]
 
 todo_include_todos = True
