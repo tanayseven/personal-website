@@ -1,4 +1,6 @@
-:orphan:
+---
+orphan
+---
 
 About me
 ========
