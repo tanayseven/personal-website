@@ -64,3 +64,7 @@ html_static_path = ['_static']
 # Setting up RSS feeds
 feed_base_url = 'http://tanayseven.com/feeds'
 feed_author = f'{author}'
+
+# Code pygments style 
+pygments_style = "sphinx"
+pygments_dark_style = "monokai"
