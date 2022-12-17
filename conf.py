@@ -36,6 +36,7 @@ extensions = [
     "blog",
     "yasfb",
     "myst_parser",
+    "sphinxcontrib.googleanalytics",
 ]
 
 todo_include_todos = True
@@ -68,3 +69,6 @@ feed_author = f'{author}'
 # Code pygments style 
 pygments_style = "sphinx"
 pygments_dark_style = "monokai"
+
+# Setup Google Analytics
+googleanalytics_id = os.environ["GOOGLE_ANALYTICS_ID"]
