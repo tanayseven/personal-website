@@ -26,7 +26,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build the project
-        run: make clean && make html
+        run: |
+          export GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+          make clean && make html
 
       - name: Setup Github config
         run: |
