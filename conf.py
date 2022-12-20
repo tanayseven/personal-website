@@ -71,4 +71,6 @@ pygments_style = "sphinx"
 pygments_dark_style = "monokai"
 
 # Setup Google Analytics
-googleanalytics_id = os.environ["GOOGLE_ANALYTICS_ID"]
+googleanalytics_id = "UA-00000000-0"
+if "GOOGLE_ANALYTICS_ID" in os.environ:
+    googleanalytics_id = os.environ["GOOGLE_ANALYTICS_ID"]
