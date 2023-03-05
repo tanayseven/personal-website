@@ -1,10 +1,10 @@
-sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-applehelp==1.0.4
 sphinxcontrib-devhelp==1.0.2
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
-sphinxcontrib-googleanalytics==0.3
+sphinxcontrib-googleanalytics==0.4
 yasfb==0.8.0
-furo==2021.11.23
-myst_parser==0.17.2
+furo==2022.12.7
+myst_parser==0.19.1
