@@ -54,8 +54,8 @@ jobs:
 
       - name: Run lighthouse performance
         run: |
-          lighthouse-badges --version || npm i -g lighthouse-badges
-          lighthouse-badges --urls https://tanayseven.com/ https://tanayseven.com/blog -o test_results
+          npx run lighthouse-badges --version
+          npx run lighthouse-badges --urls https://tanayseven.com/ https://tanayseven.com/blog -o test_results
 
       - name: Install Netlify CLI
         run: npm install netlify-cli -g
