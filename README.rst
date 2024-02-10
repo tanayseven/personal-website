@@ -1,8 +1,8 @@
 Continuous Integration and Deployment
 =====================================
 
-.. image:: https://github.com/tanayseven/personal-website/workflows/CI/badge.svg
-    :target: https://github.com/tanayseven/personal-website/actions?query=workflow%3ACI
+.. image:: https://github.com/tanayseven/personal-website/actions/workflows/main.yml/badge.svg
+    :target: https://github.com/tanayseven/personal-website/actions/workflows/main.yml
     :alt: CI
 
 .. image:: https://img.shields.io/website?url=https%3A%2F%2Fblog.tanay.tech
