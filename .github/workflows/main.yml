@@ -30,22 +30,19 @@ jobs:
           export GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
           make clean && make html
 
-      - name: Setup Github config
+      - name: Install AWS CLI
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws --version
 
-      - name: Clone the Github pages repository
-        run: git clone https://${{ secrets.GH_TOKEN }}@github.com/tanayseven/tanayseven.github.io.git
-
-      - name: Deploy to Github pages
-        run: |
-          rsync -avzh _build/html/* $GP_REPO_PATH
-          rsync -avzh _build/html/.[^.]* $GP_REPO_PATH
-          cd $GP_REPO_PATH
-          git add .
-          git commit -m "`git status --porcelain`" || echo "Nothing new in the branch, nothing will be deployed"
-          git push
+      - name: Deploy to AWS bucket
+        run: aws s3 sync _build/html s3://blog.tanay.tech --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.0
@@ -55,17 +52,10 @@ jobs:
       - name: Run lighthouse performance
         run: |
           npx --yes lighthouse-badges --version
-          npx --yes lighthouse-badges --urls https://blog.tanay.tech/ -o test_results
+          npx --yes lighthouse-badges --url "https://blog.tanay.tech/" -o test_results
 
       - name: Install Netlify CLI
         run: npm install netlify-cli -g
 
       - name: Publish the performance badges to Netlify
         run: netlify deploy --auth=${{ secrets.NETLIFY_TOKEN }} --dir=test_results/ --site=tanayseven-badges-personal-website.netlify.app
-
-      - name: Deploy to AWS bucket
-        run: aws s3 sync _build/html s3://blog.tanay.tech --delete
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
