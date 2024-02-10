@@ -6,12 +6,15 @@ Continuous Integration and Deployment
     :alt: CI
 
 .. image:: https://img.shields.io/website?url=https%3A%2F%2Fblog.tanay.tech
+    :target: https://blog.tanay.tech
     :alt: Website
 
 .. image:: https://img.shields.io/github/license/tanayseven/personal-website
+    :target: https://github.com/tanayseven/personal-website/blob/main/LICENSE.txt
     :alt: GitHub License
 
 .. image:: https://img.shields.io/twitter/follow/tanayseven
+    :target: https://twitter.com/tanayseven
     :alt: X (formerly Twitter) Follow
 
 Website Performance Report (Lighthouse)
