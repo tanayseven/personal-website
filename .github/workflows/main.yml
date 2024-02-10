@@ -30,13 +30,6 @@ jobs:
           export GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
           make clean && make html
 
-      - name: Install AWS CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
-          aws --version
-
       - name: Deploy to AWS bucket
         run: aws s3 sync _build/html s3://blog.tanay.tech --delete
         env:
