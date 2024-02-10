@@ -5,40 +5,32 @@ Continuous Integration and Deployment
     :target: https://github.com/tanayseven/personal-website/actions?query=workflow%3ACI
     :alt: CI
 
-.. image:: https://api.netlify.com/api/v1/badges/12c02181-a429-42f0-becb-fc25eaae57e8/deploy-status
-    :target: https://app.netlify.com/sites/tanay-personal-website-pre-prod/deploys
-    :alt: Netlify Status
+.. image:: https://img.shields.io/website?url=https%3A%2F%2Fblog.tanay.tech
+    :alt: Website
 
-.. image:: https://img.shields.io/github/languages/code-size/tanayseven/tanayseven.github.io?label=Build%20size&style=flat-square
-    :target: https://github.com/tanayseven/tanayseven.github.io
-    :alt: Prod build 
+.. image:: https://img.shields.io/github/license/tanayseven/personal-website
+    :alt: GitHub License
 
-.. image:: https://img.shields.io/website?down_color=red&down_message=DOWN&label=Production&style=flat-square&up_color=green&up_message=UP&url=https%3A%2F%2Ftanayseven.com
-    :target: https://tanayseven.com
-    :alt: Prod deployment status
-
-.. image:: https://img.shields.io/github/license/tanayseven/personal_website?color=blue&label=License&style=flat-square
-    :target: https://www.mit.edu/~amini/LICENSE.md
-    :alt: License
-
+.. image:: https://img.shields.io/twitter/follow/tanayseven
+    :alt: X (formerly Twitter) Follow
 
 Website Performance Report (Lighthouse)
 =======================================
 
-.. image:: https://tanayseven-badges-personal-website.netlify.app/lighthouse_best-practices.svg
-    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=best-practices&utm_source=lh-chrome-ext
+.. image:: https://blog.tanay.tech/test_results/lighthouse_best-practices.svg
+    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fblog.tanay.tech%2F&strategy=mobile&category=best-practices&utm_source=lh-chrome-ext
     :alt: Best Practices
 
-.. image:: https://tanayseven-badges-personal-website.netlify.app/lighthouse_performance.svg
-    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=performance&utm_source=lh-chrome-ext
+.. image:: https://blog.tanay.tech/test_results/lighthouse_performance.svg
+    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fblog.tanay.tech%2F&strategy=mobile&category=performance&utm_source=lh-chrome-ext
     :alt: Performance
 
-.. image:: https://tanayseven-badges-personal-website.netlify.app/lighthouse_accessibility.svg
-    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=accessibility&utm_source=lh-chrome-ext
+.. image:: https://blog.tanay.tech/test_results/lighthouse_accessibility.svg
+    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fblog.tanay.tech%2F&strategy=mobile&category=accessibility&utm_source=lh-chrome-ext
     :alt: Accessibility
 
-.. image:: https://tanayseven-badges-personal-website.netlify.app/lighthouse_seo.svg
-    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftanayseven.com%2F&strategy=mobile&category=seo&utm_source=lh-chrome-ext
+.. image:: https://blog.tanay.tech/test_results/lighthouse_seo.svg
+    :target: https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fblog.tanay.tech%2F&strategy=mobile&category=seo&utm_source=lh-chrome-ext
     :alt: SEO
 
 Static Website Generator
