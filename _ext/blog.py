@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from pathlib import Path
 from typing import TypedDict, Optional
 
 from docutils import nodes
@@ -53,18 +54,58 @@ def _fetch_date_from_file(node):
 
 class PostDirective(SphinxDirective):
     has_content = False
-    option_spec = {"tags": str, "category": str, "author": str, "draft": bool}
+    option_spec = {"tags": str, "category": str, "author": str, "draft": bool, "show_modified_date": bool}
+    separator = ","
 
     def run(self) -> list[Node]:
         node = PostNode()
         node.document = self.state.document
         set_source_info(self, node)
         date = _fetch_date_from_file(node)
+        file_path = Path(node.source)
+        modified_date = datetime.fromtimestamp(file_path.stat().st_mtime)
         node.append(
             nodes.line(text=f"Published on: {date.strftime('%d %B %Y')}"),
         )
+        if self.options.get("show_modified_date"):
+            node.append(
+                nodes.line(text=f"Last modified on: {modified_date.strftime('%d %B %Y')}"),
+            )
+        tags = self.options.get("tags")
+        if tags:
+            tags_element = nodes.paragraph()
+            tags_element["classes"] = ["tags"]
+            tags_element.append(nodes.strong(text="Tags: "))
+            for tag in tags.split(self.separator):
+                tag = tag.strip()
+                reference = nodes.reference("", f"")
+                reference["refuri"] = f"_tags/{tag}"
+                reference.append(nodes.Text(tag))
+                tags_element.append(reference)
+                tags_element.append(nodes.Text(self.separator))
+            node.append(tags_element)
+        category = self.options.get("category")
+        if category:
+            category_element = nodes.paragraph()
+            category_element["classes"] = ["category"]
+            category_element.append(nodes.strong(text="Category: "))
+            reference = nodes.reference("", f"")
+            reference["refuri"] = f"_categories/{category}"
+            reference.append(nodes.Text(category))
+            category_element.append(reference)
+            node.append(category_element)
+        author = self.options.get("author")
+        if author:
+            author_element = nodes.paragraph()
+            author_element["classes"] = ["author"]
+            author_element.append(nodes.strong(text="Author: "))
+            reference = nodes.reference("", f"")
+            reference["refuri"] = f"authors/{author}"
+            reference.append(nodes.Text(author))
+            author_element.append(reference)
+            node.append(author_element)
         node.append(nodes.transition())
-        titles = [x for x in node.document.traverse() if hasattr(x, "title")]
+        titles = [x for x in node.document.findall() if hasattr(x, "title")]
         title = titles[0].astext() if titles else None
         self.state.nested_parse(self.content, self.content_offset, node)
         if not hasattr(self.env, "all_posts"):

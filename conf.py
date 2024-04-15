@@ -36,10 +36,11 @@ extensions = [
     "blog",
     "yasfb",
     "myst_parser",
+    "sphinx_tags",
     "sphinxcontrib.googleanalytics",
 ]
 
-todo_include_todos = True
+tags_create_tags = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

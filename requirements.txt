@@ -8,3 +8,4 @@ sphinxcontrib-googleanalytics==0.4
 yasfb==0.8.0
 furo==2022.12.7
 myst_parser==0.19.1
+filelock==3.12.3
