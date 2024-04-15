@@ -36,7 +36,7 @@ extensions = [
     "blog",
     # "yasfb",
     "myst_parser",
-    "sphinx_tags",
+    # "sphinx_tags",
     "sphinxcontrib.googleanalytics",
 ]
 
