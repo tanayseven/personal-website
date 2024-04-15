@@ -34,7 +34,7 @@ sys.path.append(os.path.abspath("./_ext"))
 
 extensions = [
     "blog",
-    "yasfb",
+    # "yasfb",
     "myst_parser",
     "sphinx_tags",
     "sphinxcontrib.googleanalytics",
